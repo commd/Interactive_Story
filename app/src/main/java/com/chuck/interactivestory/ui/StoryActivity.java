@@ -1,11 +1,11 @@
-package com.chuck.interactivestory;
+package com.chuck.interactivestory.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+
+import com.chuck.interactivestory.R;
 
 public class StoryActivity extends AppCompatActivity {
 
@@ -18,7 +18,9 @@ public class StoryActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name = intent.getStringExtra(getString(R.string.key_name));
-        if (name == null) { name = "Error getting 'name' value."; }
+        if ((name == null) || (name == "")) {
+            name = "Error";
+        }
         Log.d(TAG, name);
     }
 
